@@ -27,9 +27,8 @@
                       last)
         content-type (format "image/%s" extension)
         bucket-path (format "%s/%s.%s" (:image-prefix c/config) file-hash extension)]
-    (println bucket-path content-type extension)
-    (println (s3/put-object aws-creds (:bucket c/config) bucket-path (:tempfile file) {:content-type content-type})
-             (s3/update-object-acl aws-creds (:bucket c/config) bucket-path (s3/grant :all-users :read)))))
+    (s3/put-object aws-creds (:bucket c/config) bucket-path (:tempfile file) {:content-type content-type})
+    (s3/update-object-acl aws-creds (:bucket c/config) bucket-path (s3/grant :all-users :read))))
 
 (defroutes handler
   (POST "/up" {params :params}
