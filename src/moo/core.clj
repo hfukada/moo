@@ -41,4 +41,6 @@
       wrap-multipart-params))
 
 (defn -main []
+  (when (not (s3/bucket-exists? aws-creds (:bucket c/config)))
+    (s3/create-bucket aws-creds (:bucket c/config)))
   (run-jetty app {:port 8080}))
