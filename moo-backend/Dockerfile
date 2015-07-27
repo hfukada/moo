@@ -12,4 +12,4 @@ COPY resources ./
 RUN lein deps
 
 ENTRYPOINT ["/usr/bin/lein"]
-CMD run
+CMD ["run"]
