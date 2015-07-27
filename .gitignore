@@ -1,10 +1,11 @@
-/target
-/classes
-/checkouts
+moo-backend/target
+moo-backend/classes
+moo-backend/checkouts
 pom.xml
 pom.xml.asc
+pom.properties
 config.json
 *.jar
 *.class
-/.lein-*
-/.nrepl-port
+moo-backend/.lein-*
+moo-backend/.nrepl-port
