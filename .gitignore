@@ -4,7 +4,7 @@ moo-backend/checkouts
 pom.xml
 pom.xml.asc
 pom.properties
-config.json
+config.env
 *.jar
 *.class
 moo-backend/.lein-*

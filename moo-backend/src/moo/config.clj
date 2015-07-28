@@ -4,8 +4,7 @@
 
 (def config
   "generate and define a global config"
-  (-> "config.json"
-      io/resource
-      .getFile
-      io/reader
-      (json/parse-stream true)))
+  {:access-key (System/getenv "ACCESS_KEY")
+   :secret-key (System/getenv "SECRET_KEY")
+   :image-prefix (System/getenv "IMAGE_PREFIX")
+   :bucket (System/getenv "BUCKET")})
