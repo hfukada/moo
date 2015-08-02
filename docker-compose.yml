@@ -1,0 +1,14 @@
+frontend:
+  build: ./moo-frontend
+
+web:
+  build: ./nginx/
+  volumes_from:
+    - frontend
+  ports:
+    - "8093:8080"
+  links:
+    - backend
+
+backend:
+  build: moo-backend/
